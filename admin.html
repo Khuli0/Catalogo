@@ -20,9 +20,15 @@
 
 <input type="text" id="nome" placeholder="Nome">
 <input type="number" id="preco" placeholder="Preço">
-<input type="text" id="imagem" placeholder="URL imagem">
 
-<button onclick="adicionarProduto()">Adicionar</button>
+<label class="upload-btn">
+    Selecionar imagem
+    <input type="file" id="imagem" accept="image/*" hidden>
+</label>
+
+<span id="nomeArquivo"></span>
+
+<button class="btn-add" onclick="adicionarProduto()">Adicionar</button>
 
 </div>
 

@@ -7,27 +7,36 @@ function salvar(){
 
 function adicionarProduto(){
 
-    let nome = document.getElementById("nome")?.value
-    let preco = document.getElementById("preco")?.value
-    let imagem = document.getElementById("imagem")?.value
+    let nome = document.getElementById("nome").value
+    let preco = document.getElementById("preco").value
+    let arquivo = document.getElementById("imagem").files[0]
 
-    if(!nome || !preco || !imagem){
+    if(!nome || !preco || !arquivo){
+        alert("Preencha tudo")
         return
     }
 
-    produtos.push({
-        nome,
-        preco,
-        imagem
-    })
+    let reader = new FileReader()
 
-    salvar()
+    reader.onload = function(e){
 
-    mostrarProdutos()
+        let imagemBase64 = e.target.result
 
-    document.getElementById("nome").value = ""
-    document.getElementById("preco").value = ""
-    document.getElementById("imagem").value = ""
+        produtos.push({
+            nome,
+            preco,
+            imagem: imagemBase64
+        })
+
+        salvar()
+        mostrarProdutos()
+
+        document.getElementById("nome").value = ""
+        document.getElementById("preco").value = ""
+        document.getElementById("imagem").value = ""
+    }
+
+    reader.readAsDataURL(arquivo)
 }
 
 function removerProduto(index){
@@ -64,7 +73,7 @@ function mostrarProdutos(){
             ${
                 admin
                 ?
-                `<button onclick="removerProduto(${index})">
+                `<button class="btn-remover" onclick="removerProduto(${index})">
                 Remover
                 </button>`
                 :
@@ -78,3 +87,25 @@ function mostrarProdutos(){
 }
 
 mostrarProdutos()
+
+
+document.getElementById("imagem").addEventListener("change", function(){
+
+    let arquivo = this.files[0]
+
+    if(!arquivo){
+        document.getElementById("nomeArquivo").innerText = ""
+        return
+    }
+
+    let nome = arquivo.name
+
+    // Limite de caracteres
+    let limite = 10
+
+    if(nome.length > limite){
+        nome = nome.substring(0, limite) + "..."
+    }
+
+    document.getElementById("nomeArquivo").innerText = nome
+})
