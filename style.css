@@ -1,0 +1,90 @@
+body{
+    font-family: Arial;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form{
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+}
+
+button{
+    padding: 10px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button:hover{
+    background: #0056b3;
+}
+
+.produtos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.produto{
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.produto img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.remover{
+    background: red;
+    margin-top: 5px;
+}
+
+.login {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}

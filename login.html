@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Login Admin</h1>
+
+<div class="login">
+    <input type="password" id="senha" placeholder="Senha 1234">
+
+    <button onclick="login()">Entrar</button>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+    let senha = document.getElementById("senha").value
+
+    if(senha === "1234"){
+
+        localStorage.setItem("logado", "true")
+
+        window.location.href = "admin.html"
+
+    }else{
+
+        alert("Senha incorreta")
+
+    }
+}
+
+</script>
+
+</body>
+</html>

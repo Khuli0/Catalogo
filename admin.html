@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="topo">
+        <h1>Modo Admin</h1>
+
+        <button onclick="logout()">Sair</button>
+    </div>
+
+
+<div class="form">
+
+<input type="text" id="nome" placeholder="Nome">
+<input type="number" id="preco" placeholder="Preço">
+<input type="text" id="imagem" placeholder="URL imagem">
+
+<button onclick="adicionarProduto()">Adicionar</button>
+
+</div>
+
+<div class="produtos" id="lista"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+if(localStorage.getItem("logado") !== "true"){
+
+    window.location.href = "login.html"
+
+}
+
+function logout(){
+
+    localStorage.removeItem("logado")
+
+    window.location.href = "index.html"
+
+}
+
+</script>
+
+</body>
+</html>
